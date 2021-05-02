@@ -75,38 +75,6 @@
     
     <script src="./assets/vendor/jquery-3.6.0/jquery-3.6.0.min.js"></script>
     <script>
-        $.ajax({
-            url: "https://api.ipify.org?format=json",
-            method: "GET",
-            dataType: "json",
-            success: function(result){
-                if(result && result.ip){
-                    $.ajax({
-                        url: "http://api.ipstack.com/"+result.ip+"?access_key=753aa70ee66dd39a2823412bbd366ec3",
-                        dataType: "json",
-                        success: function(result2){
-                            if(result2){
-                                $.ajax({
-                                    url: "https://andre-luiz1997.github.io/personal_page/log.php",
-                                    // url: "http://localhost/personal_page/log.php",
-                                    method: "POST",
-                                    dataType: "json",
-                                    data: {
-                                        ip: result.ip,
-                                        country: result2.country,
-                                        region: result2.region,
-                                        regionName: result2.regionName,
-                                        city: result2.city
-                                    }
-                                });
-                            }
-                        }
-                    });
-                }
-            }
-        });
-
-
         $(document).ready(function(){
             $("#projetos").click(function(){
                 if($(this).hasClass("active")){
