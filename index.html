@@ -82,7 +82,7 @@
             success: function(result){
                 if(result && result.ip){
                     $.ajax({
-                        url: "http://api.ipstack.com/"+result.ip+"?access_key=753aa70ee66dd39a2823412bbd366ec3",
+                        url: "https://api.ipstack.com/"+result.ip+"?access_key=753aa70ee66dd39a2823412bbd366ec3",
                         dataType: "json",
                         success: function(result2){
                             if(result2){
