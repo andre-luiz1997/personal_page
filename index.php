@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome-5.15.3/css/all.css">
+    
+    <title>André Silveira - Junior Web Developer</title>
+</head>
+<body>
+    <section class="profile_section">
+        <img src="assets/img/profile.jpg" alt="" class="profile_img">
+    </section>
+    <section class="content_section">
+        <div class="title">André Silveira</div>
+        <div class="subtitle">Junior Web Developer</div>
+        <section class="icons_section">
+            <a class="icon" href="https://github.com/andre-luiz1997/">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="icon" href="https://www.instagram.com/andresilveiralucas/">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="icon" href="https://github.com/andre-luiz1997/">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </section>
+        <section class="items slide">
+            <div class="item" id="projetos">
+                Projetos <i class="fas fa-caret-down float-right arrow_indicator"></i>
+            </div>
+        </section>
+        <section class="projects_section hide">
+            <ul>
+                <li>
+                    <div class="project_card">
+                        <div class="title text-center">Monitoramento Covid-19 em Timóteo-MG, Brasil</div>
+                        <div class="languages">
+                            <div class="badge badge-default">Python</div>
+                            <div class="badge badge-default">Pandas</div>
+                            <div class="badge badge-default">Google Colab</div>
+                        </div>
+                        <p class="info">
+                            Levantamento de dados de infectados, mortos e vacinados junto à Prefeitura de Timóteo e no painel de divulgação da Secretaria de Estado de Saúde de MG.
+                        </p>
+                        <p class="info">
+                            Exibição gráfica dos dados tratados com a biblioteca Pandas para Python, utilizando a plataforma do Google Colaboratory.
+                        </p>
+                        <a class="link" href="https://colab.research.google.com/drive/1gL3lr9-Z2NxF1b6YJGHKVBjOrgPtMHZp#scrollTo=W69_2X2aqvt2&line=1&uniqifier=1">Ir para o Projeto</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="project_card">
+                        <div class="title text-center">Space Invaders Game</div>
+                        <div class="languages">
+                            <div class="badge badge-default">HTML</div>
+                            <div class="badge badge-default">Javascript</div>
+                            <div class="badge badge-default">Three.js</div>
+                        </div>
+                        <p class="info">
+                            Desenvolvimento de jogo baseado no clássico Space Invaders, em ambiente 3D manipulado com a biblioteca Javascript Three.js
+                        </p>
+                        <img src="./assets/img/space_invaders.png" alt="Space Invaders" class="project_img">
+                        <a class="link" href="https://andre-luiz1997.github.io/spaceInvaders/">Ir para o Projeto</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="footer">
+            <i class="far fa-copyright"></i> André Luiz Silveira, 2021.
+        </section>
+    </section>
+    
+    <script src="./assets/vendor/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#projetos").click(function(){
+                if($(this).hasClass("active")){
+                    $(this).removeClass("active");
+                    $(".projects_section").addClass('hide');
+                    $(".arrow_indicator").removeClass('fa-caret-up').addClass('fa-caret-down');
+                }else{
+                    $(this).addClass("active");
+                    $(".projects_section").removeClass('hide');
+                    $(".arrow_indicator").removeClass('fa-caret-down').addClass('fa-caret-up');
+                }
+            });
+
+            $(".fa-arrow-left").click(function(){
+                $(".toHide").addClass("toRight");
+                setTimeout(() => {
+                    $(".items").removeClass("hide");
+                }, 250);
+                // $(".items").removeClass("toLeft");
+            });
+        });
+    </script>
+</body>
+</html>
+
